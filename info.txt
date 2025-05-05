@@ -1,6 +1,6 @@
 cd "Program Files\MySQL\MySQL Server 8.0\bin" from C:
 mysql -u root -p
-use X;
+use X (the database);
 
 to create:
 
@@ -18,14 +18,16 @@ insert into videogames_pec3 (title, developer, genre, release_year, game_mode, p
 multiplayer = true
 singleplayer = false
 
-drop table X
-truncate table X
+drop table X;
+truncate table X;
 show tables;
 show databases;
 describe X;
+select * from X;
 
 Things that have to be open:
 - enunciado
 - wamp
 - laracast
 - docs de google drive
+- haber accedido a la DB
