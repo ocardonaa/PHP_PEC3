@@ -27,6 +27,12 @@
                 SinglePlayer
             <?php endif; ?>
         </li>
+        <li>
+            Platform: <?= $random_videogame->platform; ?>
+        </li>
+        <li>
+            <?php echo '<img src="' . htmlspecialchars($random_videogame->cover_image) . '" alt="Cover image" />'; ?>
+        </li>
     </ul>
 </body>
 </html>
