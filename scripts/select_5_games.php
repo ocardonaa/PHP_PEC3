@@ -13,7 +13,6 @@ while ($i != 0) {
 
 $videogames_arr = array();
 
-
 for ($i = 0; $i < count($rand_arr); $i++) {
     $random_videogame = $query->singleVideogame($rand_arr[$i], 'videogames_pec3', 'Videogame')[0];
     array_push($videogames_arr, $random_videogame);

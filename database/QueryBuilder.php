@@ -22,4 +22,9 @@ class QueryBuilder {
         $statement = $this->pdo->prepare("select * from {$table} where id = {$id}");
         return $this->execute_query($statement, $class);
     }
+
+    public function sortVideogames($query, $class) {
+        $statement = $this->pdo->prepare($query);
+        return $this->execute_query($statement, $class);
+    }
 }

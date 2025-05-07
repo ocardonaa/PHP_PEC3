@@ -9,7 +9,7 @@
     <ul>
         <?php foreach ($videogames_arr as $videogame) : ?>
             <li>
-                Title: <?= $videogame->title; ?>
+            <?php echo "<a href='../scripts/post.php?id=$videogame->id'>Title: $videogame->title</a>"?>
             </li>
             <li>
                 Developer: <?= $videogame->developer; ?>

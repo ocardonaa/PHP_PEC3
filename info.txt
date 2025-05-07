@@ -1,6 +1,6 @@
 cd "Program Files\MySQL\MySQL Server 8.0\bin" from C:
 mysql -u root -p
-use X (the database);
+use videogames_pec3 (the database);
 
 to create:
 
@@ -13,17 +13,19 @@ to insert:
 
 insert into videogames (title, developer, genre, release_year, game_mode, platform, cover_image) values ();
 
-insert into videogames_pec3 (title, developer, genre, release_year, game_mode, platform, cover_image) values ('Minecraft', 'Mojang', 'Sandbox', 2009, true, 'PC', '/covers/1minecraft.png'), ('PacMan', 'Toru Iwatani', 'Arcade', 1980, false, 'PC', '/covers/2pacman.webp'), ('GTA V', 'Rockstar', 'Sandbox', 2013, true, 'PC', '/covers/3gta.webp'), ('League of Legends', 'Riot Games', 'MOBA', 2009, true, 'PC', '/covers/4lol.webp'), ('Silent Hill', 'Konami', 'Terror', 1999, false, 'PC', '/covers/5sh1.webp'), ('CSGO', 'Valve', 'FPS', 2012, true, 'PC', '/covers/6csgo.webp'), ('Tetris', 'Alexey Pajitnov', 'Arcade', 1989, false, 'PC', '/covers/7tetris.webp'), ('Need for Speed', 'Electronic Arts', 'Racing', 1994, true, 'PC', '/covers/8nfs.webp'), ('Mortal Kombat', 'Ed Boon', 'Fighting', 1992, true, 'PC', '/covers/9mortalk.webp'), ('Nuclear Throne', 'Vlambeer', 'RogueLike', 2015, false, 'PC', '/covers/10nt.webp');
+insert into videogames_pec3 (title, developer, genre, release_year, game_mode, platform, cover_image) values ('Minecraft', 'Mojang', 'Sandbox', 2009, true, 'PC', '/covers/1minecraft.png'), ('PacMan', 'Toru Iwatani', 'Arcade', 1980, false, 'Arcade Machine', '/covers/2pacman.webp'), ('GTA V', 'Rockstar', 'Sandbox', 2013, true, 'Play Station', '/covers/3gta.webp'), ('League of Legends', 'Riot Games', 'MOBA', 2009, true, 'PC', '/covers/4lol.webp'), ('Silent Hill', 'Konami', 'Terror', 1999, false, 'PC', '/covers/5sh1.webp'), ('CSGO', 'Valve', 'FPS', 2012, true, 'PC', '/covers/6csgo.webp'), ('Tetris', 'Alexey Pajitnov', 'Arcade', 1989, false, 'Arcade Machine', '/covers/7tetris.webp'), ('Need for Speed', 'Electronic Arts', 'Racing', 1994, true, 'Xbox', '/covers/8nfs.webp'), ('Mortal Kombat', 'Ed Boon', 'Fighting', 1992, true, 'PC', '/covers/9mortalk.webp'), ('Nuclear Throne', 'Vlambeer', 'RogueLike', 2015, false, 'PC', '/covers/10nt.webp');
 
 multiplayer = true
 singleplayer = false
 
-drop table X;
-truncate table X;
+MySQL commands:
+
+drop table videogames_pec3;
+truncate table videogames_pec3;
 show tables;
 show databases;
-describe X;
-select * from X;
+describe videogames_pec3;
+select * from videogames_pec3;
 
 Things that have to be open:
 - enunciado
@@ -31,3 +33,7 @@ Things that have to be open:
 - laracast
 - docs de google drive
 - haber accedido a la DB
+
+Lanzar server por el puerto 8000
+
+php -S localhost:8000  
