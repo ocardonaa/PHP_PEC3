@@ -1,13 +1,14 @@
 <?php
 
-require __DIR__ . '/../config/bootstrap.php';
-require __DIR__ . '/../database/Videogame.php';
-
 $videogame_id = 0;
 
 if (isset($_GET['id'])) {
     $videogame_id = $_GET['id'];
 }
+
+$uri = $_SERVER['REQUEST_URI'];
+
+$videogame_id = strlen($uri) == 12 ? substr($uri, -2) : substr($uri, -1);
 
 $id = htmlspecialchars($videogame_id);
 

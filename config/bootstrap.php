@@ -2,6 +2,8 @@
 
 require __DIR__ . '/../database/Connection.php';
 require __DIR__ . '/../database/QueryBuilder.php';
+require __DIR__ . '/../database/Router.php';
+require  __DIR__ . '/../database/Videogame.php';
+require  __DIR__ . '/../database/Request.php';
 $config = require 'db_config.php';
-$pdo = Connection::make($config['database']);
-$query = new QueryBuilder($pdo);
+$query = new QueryBuilder(Connection::make($config['database']));

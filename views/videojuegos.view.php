@@ -8,6 +8,7 @@
 </head>
 <body>
     <?= "<h1>Videojuegos de la página $currentPage</h1>"; ?>
+    <?php require 'partials/nav.php'; ?>
     <form method="GET" action="">
         <button type="submit" name="sort" value="release_asc">Sort by released year Ascending</button>
         <button type="submit" name="sort" value="release_desc">Sort by released year Descending</button>
@@ -23,7 +24,7 @@
     <ul>
         <?php foreach ($currentVideogames as $videogame) : ?>
             <li>
-                <?php echo "<a href='../scripts/post.php?id=$videogame->id'>Title: $videogame->title</a>"?>
+                <?php echo "<a href=videogame" . $videogame->id . '>Title:' . $videogame->title ."</a>"?>
             </li>
             <li>
                 Developer: <?= $videogame->developer; ?>
@@ -36,19 +37,19 @@
             </li>
         <?php endforeach; ?>
         <?php if ($currentPage > 1) : ?>
-            <?= "<a class='larger-text' href='?page=" . ($currentPage - 1) . "'>Previous</a> "; ?>
+            <?= "<a class='larger-text' href='?page=" . ($currentPage - 1) . '&sort=' . urlencode($sort_by) . "'>Previous</a> "; ?>
         <?php endif; ?>
         <?php 
             for ($i = 1; $i <= $totalPages; $i++) {
                 if ($i == $currentPage) {
                     echo "<strong class='larger-text'>$i</strong>";
                 } else {
-                    echo "<a class='larger-text' href='?page=$i'>$i</a> ";
+                    echo "<a class='larger-text' href='?page=" . $i . '&sort=' . urlencode($sort_by) . "'>$i</a> ";
                 }
             }
         ?>
         <?php if ($currentPage < $totalPages) : ?>
-            <?= "<a class='larger-text' href='?page=" . ($currentPage + 1) . "'>Next</a>"; ?>
+            <?= "<a class='larger-text' href='?page=" . ($currentPage + 1) . '&sort=' . urlencode($sort_by) . "'>Next</a>"; ?>
         <?php endif; ?>
     </ul>
 </body>

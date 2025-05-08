@@ -6,10 +6,12 @@
     <title>Index View</title>
 </head>
 <body>
+    <h1>Home Page</h1>
+    <?php require 'partials/nav.php'; ?>
     <ul>
         <?php foreach ($videogames_arr as $videogame) : ?>
             <li>
-            <?php echo "<a href='../scripts/post.php?id=$videogame->id'>Title: $videogame->title</a>"?>
+                <?php echo "<a href=videogame" . $videogame->id . '>Title:' . $videogame->title ."</a>"?>
             </li>
             <li>
                 Developer: <?= $videogame->developer; ?>
