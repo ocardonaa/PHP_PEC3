@@ -13,4 +13,6 @@ $router->define([
     'videogame8' => 'scripts/post.php',
     'videogame9' => 'scripts/post.php',
     'videogame10' => 'scripts/post.php',
+    'api/videogames/1' => 'scripts/api_videogames.php',
+    'api/videogame/1'=> 'scripts/api_videogame_1.php'
 ]);
