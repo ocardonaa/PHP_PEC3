@@ -6,6 +6,8 @@ to create:
 
 create database X;
 
+create table videogames_users(id int primary key AUTO_INCREMENT, username tinytext not null,  name tinytext not null, surname tinytext not null, password tinytext not null);
+
 create table videogames_pec3(id int primary key AUTO_INCREMENT, title tinytext not null, developer tinytext not null, genre tinytext not null, release_year year not null, game_mode boolean not null, platform tinytext not null, cover_image tinytext not null);
 
 
@@ -36,4 +38,4 @@ Things that have to be open:
 
 Lanzar server por el puerto 8000
 
-php -S localhost:8000  
+php -S localhost:8000

@@ -27,4 +27,16 @@ class QueryBuilder {
         $statement = $this->pdo->prepare($query);
         return $this->execute_query($statement, $class);
     }
+
+    public function selectUsers($table) {
+        $statement = $this->pdo->prepare("select * from {$table}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getUser($table, $username) {
+        $statement = $this->pdo->prepare("select * from {$table} where username = '{$username}'");
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
 }

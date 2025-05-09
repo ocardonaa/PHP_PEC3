@@ -8,6 +8,7 @@
 </head>
 <body>
     <?= "<h1>Videojuegos de la página $currentPage</h1>"; ?>
+    <?php require 'partials/session_name.php'; ?>
     <?php require 'partials/nav.php'; ?>
     <form method="GET" action="">
         <button type="submit" name="sort" value="release_asc">Sort by released year Ascending</button>

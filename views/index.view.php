@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index View</title>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
 </head>
 <body>
     <h1>Home Page</h1>
+    <?php require 'partials/session_name.php'; ?>
     <?php require 'partials/nav.php'; ?>
     <ul>
         <?php foreach ($videogames_arr as $videogame) : ?>
