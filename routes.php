@@ -15,5 +15,8 @@ $router->define([
     'videogame10' => 'scripts/post.php',
     'api/videogames/1' => 'scripts/api_videogames.php',
     'api/videogame/1' => 'scripts/api_videogame_1.php',
-    'login' => 'scripts/login.php'
+    'login' => 'scripts/login.php',
+    'logout' => 'scripts/logout.php',
+    'signup' => 'scripts/signup.php',
+    'profile' => 'scripts/edit.php'
 ]);

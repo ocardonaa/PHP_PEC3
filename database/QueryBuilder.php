@@ -39,4 +39,14 @@ class QueryBuilder {
         $statement->execute();
         return $statement->fetch(PDO::FETCH_OBJ);
     }
+
+    public function createUser($table, $username, $password, $name, $surname) {
+        $statement = $this->pdo->prepare("insert into {$table} (username, name, surname, password) values ('{$username}', '{$name}', '{$surname}', '{$password}')");
+        $statement->execute();
+    }
+
+    public function updateUser($table, $field, $value, $old_value, $username_field, $username) {
+        $statement = $this->pdo->prepare("update {$table} set {$field} = '{$value}' where {$field} = '{$old_value}' and {$username_field} = '{$username}'");
+        $statement->execute();
+    }
 }

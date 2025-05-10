@@ -1,28 +1,41 @@
 <?php
 
-$username = filter_input(INPUT_GET, 'username', FILTER_SANITIZE_STRING);
-$username = $username != null ? trim($username) : '';
+require 'functions/sanitize_input.php';
 
-$password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING);
-$password = $password != null ? trim($password) : '';
+if (!isset($_COOKIE[session_name()])) {
 
-$my_user = $query->getUser('videogames_users', $username);
+    $username = sanitize($username, 'username');
 
-if ($my_user) {
-    if (password_verify($password, $my_user->password)) {
-        echo 'Successfully logged in!';
-        session_start();
-        $_SESSION['name'] = $my_user->username;
+    $password = sanitize($password, 'password');
+
+    $my_user = $query->getUser('videogames_users', $username);
+
+    if ($my_user) {
+        if (!($username == '' && $password == '')) {
+            if (password_verify($password, $my_user->password)) {
+                echo 'Successfully logged in!';
+                session_start();
+                $_SESSION['name'] = $my_user->username;
+                header("Location: /");
+                exit();
+            }
+            else {
+                echo 'Wrong username or password';
+            }
+        }
     }
+
     else {
-        echo 'Wrong username or password';
+        if (!($username == '' && $password == '')) {
+            echo 'Wrong username or password';
+        }
     }
+
+    require __DIR__ .  '/../views/login.view.php';
 }
 
 else {
-    if (!($username == '' && $password == '')) {
-        echo 'Wrong username or password';
-    }
+    header("Location: /");
+    exit();
 }
 
-require __DIR__ .  '/../views/login.view.php';
