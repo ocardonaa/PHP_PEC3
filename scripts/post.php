@@ -17,5 +17,3 @@ if ($id != 0) {
 }
 
 require __DIR__ . '/../views/random-videogame.view.php'; 
-
-?>

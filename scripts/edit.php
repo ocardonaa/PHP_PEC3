@@ -33,7 +33,7 @@ if (isset($_COOKIE[session_name()])) {
             }
         }
 
-        header('Location: /');
+        header('Location: profile');
         exit;
     }
 
